@@ -86,6 +86,8 @@ const container = css`
   padding-top: 58px;
   padding-left: 58px;
   padding-right: 58px;
+  max-width: 1325px;
+  margin:auto;
 `
 
 const btnInvite = css`
