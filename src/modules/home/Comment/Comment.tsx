@@ -2,19 +2,89 @@ import { css } from '@emotion/css'
 import styled from '@emotion/styled'
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
+import Line from '../Header/Line'
+import CardComment from './CardComment/CardComment'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from "swiper";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const Comment = () => {
   return (
     <Backgroud>
+      <Line />
       <Container>
         <Grid container>
           <Grid item xs={4} container justifyContent="center" alignItems="center">
-            <Image src={require('@/assets/img/google.png')} />
+            <Image src={require('@/assets/img/google.png')}  />
           </Grid>
           <Grid item xs={8} container justifyContent="center">
             <ContainerDesc>
-              <Typography variant="h4" color="white"><b>Opiniones de clientes</b></Typography>
+              <Typography variant="h5" color="white"><b>Opiniones de clientes</b></Typography>
             </ContainerDesc>
+            <div>
+              <Swiper
+                slidesPerView={3}
+                spaceBetween={-50}
+                navigation
+                modules={[Navigation, Pagination]}
+                className={ContainerSwiper}
+                loop
+                loopedSlides={3}
+              >
+                <SwiperSlide className={ContainerSwiperSlide}>
+                  <CardComment
+                    name="Marcela"
+                    date="11/12/2022"
+                    comment="un Equipo de trabajo muy eficaz y rápido"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className={ContainerSwiperSlide}>
+                  <CardComment
+                    name="Marcela"
+                    date="11/12/2022"
+                    comment="un Equipo de trabajo muy eficaz y rápido"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className={ContainerSwiperSlide}>
+                  <CardComment
+                    name="Marcela"
+                    date="11/12/2022"
+                    comment="un Equipo de trabajo muy eficaz y rápido"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className={ContainerSwiperSlide}>
+                  <CardComment
+                    name="Marcela"
+                    date="11/12/2022"
+                    comment="un Equipo de trabajo muy eficaz y rápido"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className={ContainerSwiperSlide}>
+                  <CardComment
+                    name="Marcela"
+                    date="11/12/2022"
+                    comment="un Equipo de trabajo muy eficaz y rápido"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className={ContainerSwiperSlide}>
+                  <CardComment
+                    name="Marcela"
+                    date="11/12/2022"
+                    comment="un Equipo de trabajo muy eficaz y rápido"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className={ContainerSwiperSlide}>
+                  <CardComment
+                    name="Marcela"
+                    date="11/12/2022"
+                    comment="un Equipo de trabajo muy eficaz y rápido"
+                  />
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </Grid>
         </Grid>
       </Container>
@@ -24,6 +94,7 @@ const Comment = () => {
 
 const Backgroud = styled.div`
   background: #434350;
+  position:relative;
 `
 
 const Container = styled.div`
@@ -34,15 +105,29 @@ const Container = styled.div`
   margin: auto;
 `
 const ContainerDesc = styled.div`
-    padding-top: 41px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 `
 const Image = styled.img`
     padding-top: 93px;
     width: 212px;
     height: 145px
 `
-const CRed = styled.span`
-    color: #F37368;
+
+const ContainerSwiper = css`
+  max-width: 872px;
+  height: 177px;
+  & > .swiper-wrapper {
+    height: 177px;
+  }
+  & > .swiper-pagination {
+  }
+`
+
+const ContainerSwiperSlide = css`
+  display:flex;
+  align-item:center;
+  justify-content:center;
 `
 
 export default Comment

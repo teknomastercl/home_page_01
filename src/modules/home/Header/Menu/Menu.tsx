@@ -8,23 +8,31 @@ const Menu = () => {
             <Grid container justifyContent="flex-end" alignItems="center">
                 <Grid item container xs>
                     <div className={css`width: 127px;`}>
-                        <Typography variant="body1" color="white"><b>Servicios</b></Typography>
+                        <a href="services">
+                            <Typography variant="body1" color="white"><b>Servicios</b></Typography>
+                        </a>
                     </div>
                 </Grid>
                 <Grid item container xs>
                     <div className={css`width: 127px;`}>
-                        <Typography variant="body1" color="white"><b>Portafolio</b></Typography>
+                        <a href="book">
+                            <Typography variant="body1" color="white"><b>Portafolio</b></Typography>
+                        </a>
                     </div>
                 </Grid>
                 <Grid item container xs>
                     <div className={css`width: 127px;`}>
-                        <Typography variant="body1" color="white"><b>Nosotros</b></Typography>
+                        <a href="aboutus">
+                            <Typography variant="body1" color="white"><b>Nosotros</b></Typography>
+                        </a>
                     </div>
                 </Grid>
                 <Grid item container xs>
-                    <div className={css`width: 230px;`}>
-                        <Button className={buttonCss} variant='contained'>Cotizar Proyecto</Button>
-                    </div>
+                    <a href="contact">
+                        <div className={css`width: 230px;`}>
+                            <Button className={buttonCss} variant='contained'>Cotizar Proyecto</Button>
+                        </div>
+                    </a>
                 </Grid>
             </Grid>
         </div>

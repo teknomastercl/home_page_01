@@ -1,23 +1,33 @@
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React from 'react'
+import { ThemeProvider } from '@mui/material/styles';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { theme } from './theme/theme';
+import Home from '@/pages/home/Home';
+import Services from '@/pages/services/Services';
+import Contact from '@/pages/contact/Contact';
 
-const theme = createTheme({
-  typography: {
-    fontFamily: [
-      'Lato',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-    ].join(','),
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
   },
-});
+  {
+    path: "/services",
+    element: <Services />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+]);
 
-
-const Layout = ({ children }: any) => {
+const Layout = () => {
   return (
     <ThemeProvider theme={theme}>
-      {children}
+      <RouterProvider router={router} />
     </ThemeProvider>
   )
 }

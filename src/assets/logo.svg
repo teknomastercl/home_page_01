@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy-4" transform="translate(-4.000000, -4.000000)">
+            <g id="Group" transform="translate(4.000000, 4.000000)">
+                <polygon id="Fill-1-Copy-4" fill="#49E2FF" points="18.0430313 53.9792016 30.1903579 53.9792016 30.1903579 20.6591514 36.0794715 20.6591514 35.9998106 13.7902264 24.0387383 13.7902264 24.0387383 46.9430017 18.0430313 46.9430017"></polygon>
+                <polygon id="Fill-1-Copy-5" fill="#F37368" points="36.0796609 20.6591514 36.0796609 54 42.3911707 54 42.3911707 7.29427762 47.8612973 7.29427762 47.8612973 53.9677878 54.0001894 53.9677878 54.0001894 0.0202911212 36 0.0202911212 36 13.7902264"></polygon>
+                <path d="M18.1455735,7.15579072 L18.0377786,54 L12.0397105,54 L12.0397105,7.32065608 C10.0377887,7.34807476 8.02645424,7.34807476 6.0057072,7.32065608 L6.0057072,20.4827455 L0,20.4827455 L0,8.8817842e-15 L30.0761508,8.8817842e-15 L30.0761508,7.15579072 L18.1455735,7.15579072 Z" id="Combined-Shape" fill="#434350"></path>
+            </g>
+        </g>
+    </g>
+</svg>

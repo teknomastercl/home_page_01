@@ -8,10 +8,12 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Line from '../Header/Line'
 
 const Footer = () => {
     return (
         <Backgroud>
+            <Line />
             <Container>
                 <Grid container spacing={5}>
                     <Grid item xs={3}>
@@ -47,6 +49,7 @@ const Footer = () => {
 const Backgroud = styled.div`
     background: #434350;
     margin-top: 57px;
+    position:relative;
 `
 const Container = styled.div`
     padding-top: 57px;
