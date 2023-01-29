@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Misael Trincado",
+        "src": "misael.png",
+        "role": "Desarrollador y Diseñador"
+    },
+    {
+        "title": "Almendra Maureira",
+        "src": "almendra.png",
+        "role": "CEO y Diseñadora"
+    },
+    {
+        "title": "Allison Campos",
+        "src": "allison.png",
+        "role": "Marketing y RRSS"
+    },
+    {
+        "title": "Mauricio Toro",
+        "src": "mauricio.png",
+        "role": "Administración Ventas"
+    }
+]

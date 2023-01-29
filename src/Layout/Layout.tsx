@@ -8,6 +8,8 @@ import { theme } from './theme/theme';
 import Home from '@/pages/home/Home';
 import Services from '@/pages/services/Services';
 import Contact from '@/pages/contact/Contact';
+import Book from '@/pages/book/book';
+import AboutUs from '@/pages/aboutUs/aboutUs';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: "/services",
     element: <Services />,
+  },
+  {
+    path: "/book",
+    element: <Book />,
+  },
+  {
+    path: "/aboutus",
+    element: <AboutUs />,
   },
   {
     path: "/contact",

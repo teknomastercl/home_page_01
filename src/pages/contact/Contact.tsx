@@ -10,9 +10,6 @@ const Contact = () => {
         <div>
             <ContainerHeader>
                 <HeaderTop />
-                <ContainerAwards>
-                    <Awards horizontal />
-                </ContainerAwards>
             </ContainerHeader>
             <ContactFormulario />
             <Footer />
@@ -22,7 +19,7 @@ const Contact = () => {
 
 export const ContainerHeader = styled.div`
     background: #434350;
-    height: 342px;
+    height: 126px;
     position: relative;
     padding-top: 58px;
 `

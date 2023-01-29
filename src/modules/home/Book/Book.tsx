@@ -35,27 +35,27 @@ const Book = () => {
               loopedSlides={3}
             >
               <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/01-viella.jpg')} className={ImgSlide} />
+                <img src={require('@/assets/img/book/viella.jpg')} className={ImgSlide} />
                 <Typography variant="body1" className={titleSlide}><b>Viella.cl</b></Typography>
               </SwiperSlide>
               <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/02-walmart.jpg')} className={ImgSlide} />
+                <img src={require('@/assets/img/book/walmart.jpg')} className={ImgSlide} />
                 <Typography variant="body1" className={titleSlide}><b>Tarjetaregalolider.cl</b></Typography>
               </SwiperSlide>
               <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/03-match.png')} className={ImgSlide} />
+                <img src={require('@/assets/img/book/match.png')} className={ImgSlide} />
                 <Typography variant="body1" className={titleSlide}><b>Matchpádel</b></Typography>
               </SwiperSlide>
               <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/01-viella.jpg')} className={ImgSlide} />
+                <img src={require('@/assets/img/book/viella.jpg')} className={ImgSlide} />
                 <Typography variant="body1" className={titleSlide}><b>Viella.cl</b></Typography>
               </SwiperSlide>
               <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/02-walmart.jpg')} className={ImgSlide} />
+                <img src={require('@/assets/img/book/walmart.jpg')} className={ImgSlide} />
                 <Typography variant="body1" className={titleSlide}><b>Tarjetaregalolider.cl</b></Typography>
               </SwiperSlide>
               <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/03-match.png')} className={ImgSlide} />
+                <img src={require('@/assets/img/book/match.png')} className={ImgSlide} />
                 <Typography variant="body1" className={titleSlide}><b>Matchpádel</b></Typography>
               </SwiperSlide>
             </Swiper>
