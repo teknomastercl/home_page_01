@@ -8,6 +8,7 @@ import AboutUs from '@/modules/home/AboutUs/AboutUs'
 import Comment from '@/modules/home/Comment/Comment'
 import Contact from '@/modules/home/Contact/Contact'
 import Footer from '@/modules/home/Footer/Footer'
+import Question from '@/modules/home/Question/Question'
 
 const Home = () => {
   return (
@@ -18,8 +19,9 @@ const Home = () => {
       <Customers />
       <Services />
       <Book />
-      <AboutUs />
       <Comment />
+      <AboutUs />
+      <Question />
       <Contact />
       <Footer />
     </Container>

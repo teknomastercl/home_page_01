@@ -5,7 +5,7 @@ import { Logo } from './Header.style'
 import Menu from './Menu/Menu'
 import styled from "@emotion/styled";
 import Line from './Line'
-import Game from './Game/Game'
+// import Game from './Game/Game'
 import Awards from './Awards/Awards'
 
 const Header = () => {
@@ -26,7 +26,7 @@ const Header = () => {
         </Grid>
         <Grid container>
           <Grid item xs={6}>
-            <div className={css`margin-top: 111px`}>
+            <div className={containerTitle}>
               <Typography variant='h2' color='white' className={pBottom25}>
                 <b>
                   ¿Ya tienes tu <Ccyan>sitio web</Ccyan>{' '}
@@ -36,7 +36,9 @@ const Header = () => {
               <Typography variant='h5' color='white' className={pBottom25}>
                 Contamos con profesionales de alta gamma para lograr resultados innovadores
               </Typography>
+              <a href="/contact">
               <Button className={btnInvite} variant="contained">Necesito aumentar mis ventas</Button>
+              </a>
             </div>
           </Grid>
           <Grid item xs={6} container justifyContent="flex-end">
@@ -73,5 +75,6 @@ const dataContainer = css`
   width: 300px;
   padding-top: 120px;
 `
+const containerTitle = css`margin-top: 111px`
 
 export default Header

@@ -8,16 +8,15 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import Line from '../Header/Line';
+const bookData = require('@/dummy/bookData.json');
 
 const Book = () => {
   return (
     <Container>
-      <Line />
       <Grid container spacing={2}>
         <Grid item xs={12} container justifyContent="center">
-          <div >
-            <Typography variant="h5" color="white"><b>Portafolio</b></Typography>
+          <div style={{ marginTop: 20 }}>
+            <Typography variant="h5"><b>Portafolio</b></Typography>
           </div>
         </Grid>
         <Grid item xs={12} container display={"block"}>
@@ -34,35 +33,26 @@ const Book = () => {
               loop
               loopedSlides={3}
             >
-              <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/viella.jpg')} className={ImgSlide} />
-                <Typography variant="body1" className={titleSlide}><b>Viella.cl</b></Typography>
-              </SwiperSlide>
-              <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/walmart.jpg')} className={ImgSlide} />
-                <Typography variant="body1" className={titleSlide}><b>Tarjetaregalolider.cl</b></Typography>
-              </SwiperSlide>
-              <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/match.png')} className={ImgSlide} />
-                <Typography variant="body1" className={titleSlide}><b>Matchpádel</b></Typography>
-              </SwiperSlide>
-              <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/viella.jpg')} className={ImgSlide} />
-                <Typography variant="body1" className={titleSlide}><b>Viella.cl</b></Typography>
-              </SwiperSlide>
-              <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/walmart.jpg')} className={ImgSlide} />
-                <Typography variant="body1" className={titleSlide}><b>Tarjetaregalolider.cl</b></Typography>
-              </SwiperSlide>
-              <SwiperSlide className={ContainerSwiperSlide}>
-                <img src={require('@/assets/img/book/match.png')} className={ImgSlide} />
-                <Typography variant="body1" className={titleSlide}><b>Matchpádel</b></Typography>
-              </SwiperSlide>
+              {
+                bookData.map(item => {
+                  const img = require('@/assets/img/book/' + item.src)
+                  return (
+                    <SwiperSlide className={ContainerSwiperSlide}>
+                      <a href={item.href} target="_blank">
+                        <img src={img} className={ImgSlide} />
+                        <Typography variant="body1" className={titleSlide}><b>{item.title}</b></Typography>
+                      </a>
+                    </SwiperSlide>
+                  )
+                })
+              }
             </Swiper>
           </div>
         </Grid>
         <Grid item xs={12} container justifyContent="center">
-          <Typography variant="body1" color="white"><b>Ver más proyectos</b></Typography>
+          <a href="/book">
+            <Typography variant="body1"><b>Ver más proyectos</b></Typography>
+          </a>
         </Grid>
       </Grid>
     </Container>
@@ -70,7 +60,6 @@ const Book = () => {
 }
 
 const Container = styled.div`
-  background: #434350;
   height: 528px;
   position:relative;
 `
@@ -98,7 +87,6 @@ const ImgSlide = css`
 `
 
 const titleSlide = css`
-  color:white;
 `
 
 export default Book

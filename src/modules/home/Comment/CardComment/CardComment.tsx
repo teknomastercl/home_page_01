@@ -6,39 +6,41 @@ interface Props {
     name: string
     date: string
     comment: string
+    src: string
 }
 
 const CardComment: React.FC<Props> = ({
     name,
     date,
-    comment
+    comment,
+    src
 }) => {
     return (
         <Container>
             <SpacingStyle>
-            <Grid container spacing={1}>
-                <Grid item xs={3}>
-                    <Avatar />
+                <Grid container spacing={1}>
+                    <Grid item xs={3}>
+                        <Avatar src={src} />
+                    </Grid>
+                    <Grid item xs={4} container alignItems="center">
+                        <Info name={name} date={date} />
+                    </Grid>
+                    <Grid item xs={4} container justifyContent="flex-end" alignItems="center">
+                        <img src={require('@/assets/img/logo-google.png')} width="20px" height="20px" />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <img src={require('@/assets/img/stars.png')} width="67px" height="14px" />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Typography variant="caption">{comment}</Typography>
+                    </Grid>
                 </Grid>
-                <Grid item xs={4} container alignItems="center">
-                    <Info name={name} date={date} />
-                </Grid>
-                <Grid item xs={4} container justifyContent="flex-end" alignItems="center">
-                    <img  src={require('@/assets/img/logo-google.png')} width="20px" height="20px"/>
-                </Grid>
-                <Grid item xs={12}>
-                <img  src={require('@/assets/img/stars.png')} width="67px" height="14px"/>
-                </Grid>
-                <Grid item xs={12}>
-                    <Typography variant="caption">{comment}</Typography>
-                </Grid>
-            </Grid>
             </SpacingStyle>
         </Container>
     )
 }
 
-const Info = ({name, date}) => (
+const Info = ({ name, date }) => (
     <Grid container>
         <Grid item xs={12}>
             <Typography variant="body2"><b>{name}</b></Typography>

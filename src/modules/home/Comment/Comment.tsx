@@ -10,6 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+const commentsData = require('@/dummy/commentsData.json');
 
 const Comment = () => {
   return (
@@ -18,7 +19,7 @@ const Comment = () => {
       <Container>
         <Grid container>
           <Grid item xs={4} container justifyContent="center" alignItems="center">
-            <Image src={require('@/assets/img/google.png')}  />
+            <Image src={require('@/assets/img/google.png')} />
           </Grid>
           <Grid item xs={8} container justifyContent="center">
             <ContainerDesc>
@@ -34,55 +35,20 @@ const Comment = () => {
                 loop
                 loopedSlides={3}
               >
-                <SwiperSlide className={ContainerSwiperSlide}>
-                  <CardComment
-                    name="Marcela"
-                    date="11/12/2022"
-                    comment="un Equipo de trabajo muy eficaz y rápido"
-                  />
-                </SwiperSlide>
-                <SwiperSlide className={ContainerSwiperSlide}>
-                  <CardComment
-                    name="Marcela"
-                    date="11/12/2022"
-                    comment="un Equipo de trabajo muy eficaz y rápido"
-                  />
-                </SwiperSlide>
-                <SwiperSlide className={ContainerSwiperSlide}>
-                  <CardComment
-                    name="Marcela"
-                    date="11/12/2022"
-                    comment="un Equipo de trabajo muy eficaz y rápido"
-                  />
-                </SwiperSlide>
-                <SwiperSlide className={ContainerSwiperSlide}>
-                  <CardComment
-                    name="Marcela"
-                    date="11/12/2022"
-                    comment="un Equipo de trabajo muy eficaz y rápido"
-                  />
-                </SwiperSlide>
-                <SwiperSlide className={ContainerSwiperSlide}>
-                  <CardComment
-                    name="Marcela"
-                    date="11/12/2022"
-                    comment="un Equipo de trabajo muy eficaz y rápido"
-                  />
-                </SwiperSlide>
-                <SwiperSlide className={ContainerSwiperSlide}>
-                  <CardComment
-                    name="Marcela"
-                    date="11/12/2022"
-                    comment="un Equipo de trabajo muy eficaz y rápido"
-                  />
-                </SwiperSlide>
-                <SwiperSlide className={ContainerSwiperSlide}>
-                  <CardComment
-                    name="Marcela"
-                    date="11/12/2022"
-                    comment="un Equipo de trabajo muy eficaz y rápido"
-                  />
-                </SwiperSlide>
+                {
+                  commentsData.map(item => {
+                    return (
+                      <SwiperSlide className={ContainerSwiperSlide}>
+                        <CardComment
+                          name={item.name}
+                          date={item.date}
+                          comment={item.comment}
+                          src={item.src}
+                        />
+                      </SwiperSlide>
+                    )
+                  })
+                }
               </Swiper>
             </div>
           </Grid>
