@@ -7,6 +7,7 @@ import styled from "@emotion/styled";
 import Line from './Line'
 import Game from './Game/Game'
 import Awards from './Awards/Awards'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -15,20 +16,20 @@ const Header = () => {
       <div className={container}>
         <Grid container>
           <Grid item xs={3}>
-            <a href='/'>
+            <Link to="/">
               <Logo src={require('@/assets/img/logo_white.png')} />
-            </a>
+            </Link>
           </Grid>
           <Grid item xs={9} container justifyContent="flex-end">
             {/* <OnlyMobileHide> */}
-              <Menu />
+            <Menu />
             {/* </OnlyMobileHide> */}
           </Grid>
         </Grid>
         <Grid container>
           <Grid item xs={12} lg={6}>
             <div className={containerTitle}>
-              <Typography variant='h4' color='white' className={pBottom25}>
+              <Typography variant='h4' color='white' className={pBottom25 + ' ' + onlyMobileFont}>
                 <b>
                   ¿Quieres quedarte en el pasado mientras tus competidores saltan al <Ccyan>futuro digital</Ccyan>?
                 </b>
@@ -36,9 +37,9 @@ const Header = () => {
               <Typography variant='h5' color='white' className={pBottom25}>
                 ¡Es hora de tener una página web o app móvil para tu empresa!
               </Typography>
-              <a href="/contact">
+              <Link to="/contact">
                 <Button className={btnInvite} variant="contained"><b>Cotización rápida y sencilla</b></Button>
-              </a>
+              </Link>
             </div>
           </Grid>
           <Grid item xs={12} lg={6} container justifyContent="flex-end" className={justifyMobile}>
@@ -48,7 +49,9 @@ const Header = () => {
               </div>
             </OnlyMobileHide>
             <OnlyMobile>
-              <Awards horizontal />
+              <div style={{ paddingBottom: 30 }}>
+                <Awards horizontal />
+              </div>
             </OnlyMobile>
           </Grid>
         </Grid>
@@ -65,12 +68,17 @@ const Ccyan = styled.span`
 `
 
 const container = css`
-  padding-top: 58px;
+  padding-top: 28px;
   padding-left: 58px;
   padding-right: 58px;
   max-width: 1325px;
   margin:auto;
   position:relative;
+  @media (max-width: 1300px) {
+    padding-top: 18px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
 `
 
 const btnInvite = css`
@@ -78,6 +86,11 @@ const btnInvite = css`
 `
 const pBottom25 = css`
   padding-bottom: 25px;
+`
+const onlyMobileFont = css`
+  @media (max-width: 1300px) {
+    font-size: 32px !important;
+  }
 `
 const dataContainer = css`
   width: 300px;
@@ -87,6 +100,9 @@ const containerTitle = css`
   margin-top: 111px;
   z-index: 10000;
   position: relative;
+  @media (max-width: 1300px) {
+    margin-top: 31px;
+  }
 `
 const justifyMobile = css`
   @media (max-width: 1300px) {

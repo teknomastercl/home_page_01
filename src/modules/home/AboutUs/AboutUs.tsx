@@ -12,7 +12,7 @@ const AboutUs = () => {
                 </Grid>
                 <Grid item xs={12} lg={6} container justifyContent="center">
                     <ContainerDesc>
-                        <Typography variant="h4"><b>¿Que hacemos en <CRed>Tekno Master?</CRed></b></Typography>
+                        <Typography variant="h4"><b>¿Qué hacemos en <CRed>Tekno Master?</CRed></b></Typography>
                         <Typography variant="body1" className={css`padding-top:15px;`}>
                             Somos una <CRed>agencia de informatica y diseño web</CRed> con sede en Santiago, Chile, que diseña y crea hermosos sitios web compatibles con motores de búsqueda para marcas en una amplia gama de sectores e industrias.
                         </Typography>
@@ -35,20 +35,26 @@ const AboutUs = () => {
 
 const Container = styled.div`
   height: 528px;
-  padding-left: 57px;
-  padding-right: 57px;
   max-width: 1325px;
   margin: auto;
   @media (max-width: 1300px) {
     height: inherit;
+    padding-left: 28px;
+    padding-right: 28px;
   }
 `
 
 const ContainerDesc = styled.div`
     padding-top: 100px;
+    padding-bottom: 58px;
     padding-left: 57px;
     padding-right: 57px;
-    padding-bottom: 58px;
+    @media (max-width: 1300px) {
+        height: inherit;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 27px;
+  }
 `
 const ImageAbout = styled.img`
     padding-top: 41px;

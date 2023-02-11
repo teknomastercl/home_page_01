@@ -1,5 +1,6 @@
 
 import HeaderTop from '@/modules/home/Header/HeaderTop/HeaderTop'
+import { css } from '@emotion/css'
 import styled from '@emotion/styled'
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
@@ -15,7 +16,7 @@ const AboutUs = () => {
       </ContainerMenu>
       <ParticlesBG />
       <ContainerRootEmployers>
-      <Employers data={employersData} />
+        <Employers data={employersData} />
       </ContainerRootEmployers>
     </Container>
   )
@@ -31,8 +32,8 @@ const Employers = ({ data }) => {
             <Grid item xs={6} lg={3} container justifyContent="center" alignItems="center">
               <ContainerEmployers>
                 <Image src={img} />
-                <Typography variant="h6" color="white"><b>{item.title}</b></Typography>
-                <Typography variant="body1" color="white">{item.role}</Typography>
+                <Typography variant="h6" color="white" className={onlyMobileTitle}><b>{item.title}</b></Typography>
+                <Typography variant="body1" color="white" className={onlyMobileRole}>{item.role}</Typography>
               </ContainerEmployers>
             </Grid>
           )
@@ -60,6 +61,11 @@ const Image = styled.img`
   height: 200px;
   padding-bottom: 20%;
   object-fit: contain;
+  @media (max-width: 1300px) {
+    width: 100px;
+    height: 100px !important;
+    object-fit: contain;
+  }
 `
 
 const Container = styled.div`
@@ -85,7 +91,23 @@ const ContainerMenu = styled.div`
   left:0;
   z-index: 10000;
   width:100%;
-  margin-top: 58px;
+  margin-top: 28px;
+  & > div {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+`
+const onlyMobileTitle = css`
+   @media (max-width: 1300px) {
+    font-size: 14px !important;
+    text-align: center;
+  }
+`
+const onlyMobileRole = css`
+  @media (max-width: 1300px) {
+    font-size: 10px !important;
+    text-align: center;
+  }
 `
 
 export default AboutUs

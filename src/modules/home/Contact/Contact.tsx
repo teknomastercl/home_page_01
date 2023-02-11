@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
-import ContactForm from './ContactForm/ContactForm'
 import ContainerInfo from './ContainerInfo/ContainerInfo'
 
 const Contact = () => {
@@ -25,5 +24,14 @@ const Container = styled.div`
   padding-top: 58px;
   max-width: 1325px;
   margin: auto;
+  @media (max-width: 1300px) {
+        height: inherit;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        &  div {
+          border-radius: 0px;
+        }
+  }
 `
 export default Contact

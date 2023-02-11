@@ -19,9 +19,13 @@ const Contact = () => {
 
 export const ContainerHeader = styled.div`
     background: #434350;
-    height: 126px;
+    height: 96px;
     position: relative;
-    padding-top: 58px;
+    padding-top: 28px;
+    & > div {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
 `
 
 export const ContainerAwards = styled.div`

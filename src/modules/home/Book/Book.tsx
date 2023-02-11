@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import useWindowDimensions from '@/utils/useWindowDimensions';
+import { Link } from 'react-router-dom';
 const bookData = require('@/dummy/bookData.json');
 
 const Book = () => {
@@ -52,9 +53,9 @@ const Book = () => {
           </div>
         </Grid>
         <Grid item xs={12} container justifyContent="center">
-          <a href="/book">
+          <Link to="/book">
             <Typography variant="body1"><b>Ver más proyectos</b></Typography>
-          </a>
+          </Link>
         </Grid>
       </Grid>
     </Container>

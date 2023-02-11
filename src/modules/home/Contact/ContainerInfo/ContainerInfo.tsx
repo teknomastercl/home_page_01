@@ -48,7 +48,9 @@ const Container = styled.div`
     border-radius:12px;
     @media (max-width: 1300px) {
         height: inherit;
-        padding-bottom: 60px;
+        padding-bottom: 60px !important;
+        padding-top: 58px;
+        width: inherit;
     }
 `
 const Logo = styled.img`
@@ -57,6 +59,9 @@ const Logo = styled.img`
     height: 68.38px;
     object-fit: contained;
     padding-bottom: 24px;
+    @media (max-width: 1300px) {
+        display:none;
+    }
 `
 const containerInfo = css`
     margin-left: 61px;

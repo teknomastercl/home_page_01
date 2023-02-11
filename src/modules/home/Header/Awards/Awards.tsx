@@ -12,10 +12,12 @@ const Awards: React.FC<Props> = ({
 }) => {
     const gridXS = horizontal ? 4 : 12
     return (
-        <Grid container justifyContent='flex-end' spacing={6}>
+        <Grid container justifyContent='flex-end' spacing={4}>
             <Grid item xs={gridXS} container flexDirection="column" justifyContent='center' alignItems="center">
+                <ContainerStar>
                     <Typography color="white" variant="h3" className={onlyMobileTitle}><b>+6</b></Typography>
                     <Typography color="white" variant="body1" className={onlyMobileDesc}><b>Años de experiencia</b></Typography>
+                </ContainerStar>
             </Grid>
             <Grid item xs={gridXS} container flexDirection="column" justifyContent='center' alignItems="center">
                 <ContainerStar>
@@ -37,12 +39,13 @@ const Star = styled.img`
     width: 68px;
     padding-bottom: 10px;
     @media (max-width: 1300px) {
-        width: 47px;
+        width: 37px;
     }
 `
 const ContainerStar = styled.div`
-    width: 160px;
     text-align: center;
+    @media (max-width: 1300px) {
+    }
 `
 const onlyMobileTitle = css`
     @media (max-width: 1300px) {
@@ -51,7 +54,11 @@ const onlyMobileTitle = css`
 `
 const onlyMobileDesc = css`
     @media (max-width: 1300px) {
-        font-size: 12px !important;
+        font-size: 10px !important;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 `
 

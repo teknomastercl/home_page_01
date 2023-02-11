@@ -84,6 +84,9 @@ const NumberCircle = styled.span`
     align-items: center;
     font-size: 24px;
     font-weight: bold;
+    @media (max-width: 1300px) {
+        margin-bottom: 28px;
+    }
 `
 
 const ContainerSwiper = css`

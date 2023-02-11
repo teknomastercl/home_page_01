@@ -2,6 +2,7 @@ import React from 'react'
 import { ThemeProvider } from '@mui/material/styles';
 import {
   createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import { theme } from './theme/theme';
@@ -11,7 +12,7 @@ import Contact from '@/pages/contact/Contact';
 import Book from '@/pages/book/book';
 import AboutUs from '@/pages/aboutUs/aboutUs';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Home />,

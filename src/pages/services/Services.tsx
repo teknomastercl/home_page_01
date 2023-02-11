@@ -86,7 +86,10 @@ const ContainerMenu = styled.div`
   left:0;
   z-index: 10000;
   width:100%;
-  margin-top: 58px;
+  margin-top: 28px;
+  & > div {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
 `
-
 export default Services

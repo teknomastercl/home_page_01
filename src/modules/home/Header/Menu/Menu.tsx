@@ -5,6 +5,8 @@ import { Button, Grid, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import ContactDesc from '../../Contact/ContactDesc'
 import RedesSociales from '../../Footer/RedesSociales'
+import HouseIcon from '@mui/icons-material/House';
+import { Link } from 'react-router-dom'
 
 const Menu = () => {
     const [openMenu, setOpenMenu] = useState(false)
@@ -17,31 +19,31 @@ const Menu = () => {
                 <Grid item container xs={12} className={onlyMobileHide}>
                     <Grid item container xs>
                         <div className={css`width: 127px;`}>
-                            <a href="services">
+                            <Link to="/services">
                                 <Typography variant="body1" color="white"><b>Servicios</b></Typography>
-                            </a>
+                            </Link>
                         </div>
                     </Grid>
                     <Grid item container xs>
                         <div className={css`width: 127px;`}>
-                            <a href="book">
+                            <Link to="/book">
                                 <Typography variant="body1" color="white"><b>Portafolio</b></Typography>
-                            </a>
+                            </Link>
                         </div>
                     </Grid>
                     <Grid item container xs>
                         <div className={css`width: 127px;`}>
-                            <a href="aboutus">
+                            <Link to="/aboutus">
                                 <Typography variant="body1" color="white"><b>Nosotros</b></Typography>
-                            </a>
+                            </Link>
                         </div>
                     </Grid>
                     <Grid item container xs>
-                        <a href="contact">
+                        <Link to="/contact">
                             <div className={css`width: 230px;`}>
                                 <Button className={buttonCss} variant='contained'>Cotizar Proyecto</Button>
                             </div>
-                        </a>
+                        </Link>
                     </Grid>
                 </Grid>
             </Grid>
@@ -67,21 +69,24 @@ const MenuOverlay = ({ active }) => {
     const classActive = active ? activeMenuTitle : ''
     return (
         <MenuOverlayContainer className={active ? activeMenuOverlay : ''}>
-            <ItemMenu href="/services" style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }} className={classActive}>Servicios</ItemMenu>
-            <ItemMenu href="/book" style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }} className={classActive}>Portafolio</ItemMenu>
-            <ItemMenu href="/aboutus" style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }} className={classActive}>Nosotros</ItemMenu>
-            <ItemMenu href="/contact" style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }} className={classActive}>Pide tu cotización aquí</ItemMenu>
-            <ItemMenu href="/" style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }} className={classActive}>
+            <Link to="/" className={itemMenu + ' ' + classActive} style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }}>
                 <ImageLogo src={require('@/assets/img/logo_full.png')} />
-            </ItemMenu>
-            <ItemMenu style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }} className={classActive}>
+            </Link>
+            <Link to="/" className={itemMenu + ' ' + classActive} style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }}>
+                <HouseIcon />
+            </Link>
+            <Link to="/services" className={itemMenu + ' ' + classActive} style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }}>Servicios</Link>
+            <Link to="/book" className={itemMenu + ' ' + classActive} style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }}>Portafolio</Link>
+            <Link to="/aboutus" className={itemMenu + ' ' + classActive} style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }}>Nosotros</Link>
+            <Link to="/contact" className={itemMenu + ' ' + classActive} style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }}>Pide tu cotización aquí</Link>
+            <div className={itemMenu + ' ' + classActive} style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }}>
                 <ContactContainer>
                     <ContactDesc rrssOff />
                 </ContactContainer>
-            </ItemMenu>
-            <ItemMenu style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }} className={classActive}>
+            </div>
+            <div className={itemMenu + ' ' + classActive} style={{ transform: `translateX(${randomIntFromInterval(0, 100) + 'vw'})` }}>
                 <RedesSociales className={redesSocialesStyle + ' ' + classActive} />
-            </ItemMenu>
+            </div>
         </MenuOverlayContainer >
     )
 }
@@ -109,12 +114,12 @@ export const activeMenuTitle = css`
     transform: translateX(0) !important;
 `
 export const IconBarContainer = styled.div``
-export const ItemMenu = styled.a`
+export const itemMenu = css`
     opacity: 0;
     transition: opacity 1s, transform 1s;
     color: white !important;
-    padding-bottom: 40px;
-    font-size: 24px;
+    padding-bottom: 12px;
+    font-size: 18px;
 `
 export const MenuOverlayContainer = styled.div`
     transition: opacity 0.5s, transform 0.5s;
@@ -130,7 +135,8 @@ export const MenuOverlayContainer = styled.div`
     position:relative;
     display: flex;
     flex-direction: column;
-    padding: 80px;
+    padding: 28px;
+    padding-top: 120px;
 
 `
 const onlyMobileShow = css`
@@ -149,7 +155,7 @@ const redesSocialesStyle = css`
 `
 
 const ImageLogo = styled.img`
-    margin-top: 100px;
+    margin-bottom: 58px;
 `
 
 const ContainerInfo = styled.div`
@@ -157,6 +163,7 @@ const ContainerInfo = styled.div`
 `
 
 const ContactContainer = styled.div`
+    padding-top: 27px;
     margin-bottom: 10px;
 `
 

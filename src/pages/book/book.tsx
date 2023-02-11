@@ -18,7 +18,7 @@ const Book = () => {
         <Grid container spacing={5}>
           {
             bookData.map(item => (
-              <Grid item xs={4} container justifyContent="center" alignItems="center">
+              <Grid item xs={12} md={6} lg={4} container justifyContent="center" alignItems="center">
                 <BookItem data={item} />
               </Grid>
             ))
@@ -48,9 +48,13 @@ const BookItem = ({
 
 export const ContainerHeader = styled.div`
     background: #434350;
-    height: 126px;
+    height: 96px;
     position: relative;
-    padding-top: 58px;
+    padding-top: 28px;
+    & > div {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
 `
 
 const Container = styled.div`
@@ -60,6 +64,7 @@ const ContainerBook = styled.div`
   max-width: 952px;
   margin: auto;
   padding-top: 57px;
+  padding-bottom: 57px;
 `
 const ContainerBookItem = styled.div`
   text-align: center;

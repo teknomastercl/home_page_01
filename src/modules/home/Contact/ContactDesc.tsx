@@ -48,7 +48,7 @@ const ContactDesc: React.FC<Props> = ({
                         </div>
                         <div className={containerEmail}>
                             <FacebookIcon className={iconStyle} fontSize={'large'} />
-                            <a href={supportData.instagram} target="_blank">
+                            <a href={supportData.facebook} target="_blank">
                                 <Typography variant="h6" color="white" className={titleStyle}>
                                     Consulta por Facebook
                                 </Typography>
@@ -56,7 +56,7 @@ const ContactDesc: React.FC<Props> = ({
                         </div>
                         <div className={containerEmail}>
                             <LinkedInIcon className={iconStyle} fontSize={'large'} />
-                            <a href={supportData.instagram} target="_blank">
+                            <a href={supportData.linkedin} target="_blank">
                                 <Typography variant="h6" color="white" className={titleStyle}>
                                     Consulta por Linkedin
                                 </Typography>

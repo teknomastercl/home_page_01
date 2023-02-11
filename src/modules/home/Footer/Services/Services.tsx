@@ -1,5 +1,6 @@
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Services = () => {
     return (
@@ -8,10 +9,10 @@ const Services = () => {
                 <Typography color="white" variant="body1"><b>Servicios</b></Typography>
             </Grid>
             <Grid item xs={12}>
-                <a href="/services"><Typography color="white" variant="body1">Diseño Gráfico</Typography></a>
-                <a href="/services"><Typography color="white" variant="body1">Página Web</Typography></a>
-                <a href="/services"><Typography color="white" variant="body1">Backend</Typography></a>
-                <a href="/services"><Typography color="white" variant="body1">Aplicación Mobile</Typography></a>
+                <Link to="/services"><Typography color="white" variant="body1">Diseño Gráfico</Typography></Link>
+                <Link to="/services"><Typography color="white" variant="body1">Página Web</Typography></Link>
+                <Link to="/services"><Typography color="white" variant="body1">Backend</Typography></Link>
+                <Link to="/services"><Typography color="white" variant="body1">Aplicación Mobile</Typography></Link>
             </Grid>
         </Grid>
     )

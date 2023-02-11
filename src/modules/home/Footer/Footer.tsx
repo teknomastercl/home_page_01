@@ -46,6 +46,9 @@ const Backgroud = styled.div`
     background: #434350;
     margin-top: 57px;
     position:relative;
+    @media (max-width: 1300px) {
+        margin-top: 0px;
+  }
 `
 const Container = styled.div`
     padding-top: 57px;

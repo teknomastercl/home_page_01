@@ -67,7 +67,6 @@ const Backgroud = styled.div`
 
 const Container = styled.div`
   height: 347px;
-  padding-left: 57px;
   background: #434350;
   max-width: 1325px;
   margin: auto;
@@ -98,7 +97,7 @@ const ContainerSwiper = css`
   & > .swiper-pagination {
   }
   @media (max-width: 1300px) {
-    max-width: 382px;
+    max-width: 332px;
   }
 `
 
