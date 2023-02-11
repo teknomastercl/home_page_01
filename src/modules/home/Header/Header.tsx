@@ -5,7 +5,7 @@ import { Logo } from './Header.style'
 import Menu from './Menu/Menu'
 import styled from "@emotion/styled";
 import Line from './Line'
-// import Game from './Game/Game'
+import Game from './Game/Game'
 import Awards from './Awards/Awards'
 
 const Header = () => {
@@ -13,7 +13,6 @@ const Header = () => {
     <>
       <Line />
       <div className={container}>
-        {/* <Game /> */}
         <Grid container>
           <Grid item xs={3}>
             <a href='/'>
@@ -21,32 +20,41 @@ const Header = () => {
             </a>
           </Grid>
           <Grid item xs={9} container justifyContent="flex-end">
-            <Menu />
+            {/* <OnlyMobileHide> */}
+              <Menu />
+            {/* </OnlyMobileHide> */}
           </Grid>
         </Grid>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={12} lg={6}>
             <div className={containerTitle}>
-              <Typography variant='h2' color='white' className={pBottom25}>
+              <Typography variant='h4' color='white' className={pBottom25}>
                 <b>
-                  ¿Ya tienes tu <Ccyan>sitio web</Ccyan>{' '}
-                  o <Ccyan>aplicación mobile</Ccyan>?
+                  ¿Quieres quedarte en el pasado mientras tus competidores saltan al <Ccyan>futuro digital</Ccyan>?
                 </b>
               </Typography>
               <Typography variant='h5' color='white' className={pBottom25}>
-                Contamos con profesionales de alta gamma para lograr resultados innovadores
+                ¡Es hora de tener una página web o app móvil para tu empresa!
               </Typography>
               <a href="/contact">
-              <Button className={btnInvite} variant="contained">Necesito aumentar mis ventas</Button>
+                <Button className={btnInvite} variant="contained"><b>Cotización rápida y sencilla</b></Button>
               </a>
             </div>
           </Grid>
-          <Grid item xs={6} container justifyContent="flex-end">
-            <div className={dataContainer}>
-              <Awards />
-            </div>
+          <Grid item xs={12} lg={6} container justifyContent="flex-end" className={justifyMobile}>
+            <OnlyMobileHide>
+              <div className={dataContainer}>
+                <Awards />
+              </div>
+            </OnlyMobileHide>
+            <OnlyMobile>
+              <Awards horizontal />
+            </OnlyMobile>
           </Grid>
         </Grid>
+        <OnlyMobileHide>
+          <Game />
+        </OnlyMobileHide>
       </div>
     </>
   )
@@ -75,6 +83,28 @@ const dataContainer = css`
   width: 300px;
   padding-top: 120px;
 `
-const containerTitle = css`margin-top: 111px`
+const containerTitle = css`
+  margin-top: 111px;
+  z-index: 10000;
+  position: relative;
+`
+const justifyMobile = css`
+  @media (max-width: 1300px) {
+    justify-content: center !important;
+    align-items: center !important;
+    height: 240px;
+  }
+`
+const OnlyMobile = styled.div`
+  display:none;
+  @media (max-width: 1300px) {
+    display: block;
+  }
+`
+const OnlyMobileHide = styled.div`
+  @media (max-width: 1300px) {
+    display: none;
+  }
+`
 
 export default Header

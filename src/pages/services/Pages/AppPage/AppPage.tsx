@@ -10,12 +10,14 @@ const AppPage = () => {
                 <Grid item xs={6} container justifyContent="center" alignItems="center">
                     <div>
                         <Typography variant="h4" color="white">
-                            Tenemos una gran experiencia desarrollado App Mobiles
+                            Somos expertos en desarrollo de aplicaciones móviles
                         </Typography>
                         <Typography variant="h5" color="white" className={css`padding-top:20px; padding-bottom: 30px;`}>
                             Desde el diseño al desarrollo y subirlos a Playstore y Appstore. Nos encargamos de manterner tu aplicación siempre activa
                         </Typography>
-                        <Button variant="contained" className={buttonContact}>Necesito un sitio web</Button>
+                        <a href='/contact'>
+                        <Button variant="contained" className={buttonContact}>Necesito una App móvil</Button>
+                        </a>
                     </div>
                 </Grid>
                 <Grid item xs={6} container justifyContent="center" alignItems="center">

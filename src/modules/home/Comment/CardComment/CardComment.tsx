@@ -15,24 +15,27 @@ const CardComment: React.FC<Props> = ({
     comment,
     src
 }) => {
+    const avatarSrc = require('@/assets/img/avatar/' + src)
     return (
         <Container>
             <SpacingStyle>
                 <Grid container spacing={1}>
-                    <Grid item xs={3}>
-                        <Avatar src={src} />
+                    <Grid item xs={3} container justifyContent="center" alignItems="center">
+                        <Avatar src={avatarSrc} sx={{ width: 35, height: 35 }} />
                     </Grid>
-                    <Grid item xs={4} container alignItems="center">
+                    <Grid item xs={7} container alignItems="center">
                         <Info name={name} date={date} />
                     </Grid>
-                    <Grid item xs={4} container justifyContent="flex-end" alignItems="center">
+                    <Grid item xs={2} container justifyContent="flex-end" alignItems="center">
                         <img src={require('@/assets/img/logo-google.png')} width="20px" height="20px" />
                     </Grid>
                     <Grid item xs={12}>
                         <img src={require('@/assets/img/stars.png')} width="67px" height="14px" />
                     </Grid>
                     <Grid item xs={12}>
-                        <Typography variant="caption">{comment}</Typography>
+                        <CommentContainer>
+                            <Typography variant="caption">{comment}</Typography>
+                        </CommentContainer>
                     </Grid>
                 </Grid>
             </SpacingStyle>
@@ -43,7 +46,7 @@ const CardComment: React.FC<Props> = ({
 const Info = ({ name, date }) => (
     <Grid container>
         <Grid item xs={12}>
-            <Typography variant="body2"><b>{name}</b></Typography>
+            <Typography variant="caption"><b>{name}</b></Typography>
         </Grid>
         <Grid item xs={12}>
             <Typography variant="caption">{date}</Typography>
@@ -57,6 +60,11 @@ const Container = styled.div`
     height: 177px;
     border-radius: 7px;
     box-shadow: solid 20px 15px 55px rgba(0,0,0,1);
+`
+
+const CommentContainer = styled.div`
+    overflow-y: scroll;
+    height: 70px;
 `
 
 const SpacingStyle = styled.div`

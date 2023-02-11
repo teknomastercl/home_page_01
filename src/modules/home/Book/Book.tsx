@@ -8,9 +8,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import useWindowDimensions from '@/utils/useWindowDimensions';
 const bookData = require('@/dummy/bookData.json');
 
 const Book = () => {
+  const { height, width } = useWindowDimensions()
   return (
     <Container>
       <Grid container spacing={2}>
@@ -22,7 +24,7 @@ const Book = () => {
         <Grid item xs={12} container display={"block"}>
           <div>
             <Swiper
-              slidesPerView={3}
+              slidesPerView={width < 1300 ? 1 : 3}
               spaceBetween={0}
               navigation
               pagination={{

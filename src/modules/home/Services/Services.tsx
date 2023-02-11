@@ -30,22 +30,22 @@ const ServicesInfo = () => {
     const ServicesData = [
         {
             title: "Diseño",
-            description: "Te ayudamos a crear o actualizar el logo e imagen de tu marca",
+            description: "Transformamos ideas en experiencias visuales impactantes que conectan con tu audiencia y potencian tu marca.",
             icon: <CreateIcon sx={{ fontSize: 80, color: '#49E2FF' }} />
         },
         {
             title: "Página Web",
-            description: "Te ofrecemos un sitio web innovador de alta gamma",
+            description: "Creemos páginas web que transmiten tu mensaje de manera clara y efectiva, maximizando la conversión y la satisfacción de tus clientes.",
             icon: <ComputerIcon sx={{ fontSize: 80, color: '#49E2FF' }} />
         },
         {
             title: "Backend",
-            description: "Contamos con informaticos expertos para diseñar tu negocio",
+            description: "Potenciamos la eficiencia y la escalabilidad de tus proyectos tecnológicos con soluciones backend robustas y personalizadas.",
             icon: <LanguageIcon sx={{ fontSize: 80, color: '#49E2FF' }} />
         },
         {
             title: "Aplicación Móvil",
-            description: "En conjunto la diseñamos y la lanzamos a la Appstore y Playstore",
+            description: "Desarrollamos Apps que brindan a tus usuarios una experiencia intuitiva y satisfactoria, impulsando tu negocio hacia el éxito.",
             icon: <AppShortcutIcon sx={{ fontSize: 80, color: '#49E2FF' }} />
         },
     ]
@@ -55,13 +55,13 @@ const ServicesInfo = () => {
             <Grid container spacing={5}>
                 {
                     ServicesData.map(item => (
-                        <Grid item xs={6} lg={3} container justifyContent="center" alignItems="center" flexDirection="column">
+                        <Grid item xs={12} lg={3} container justifyContent="center" alignItems="center" flexDirection="column">
                             <ContainerItem>
                                 {item.icon}
                             </ContainerItem>
                             <ContainerText>
-                                <Typography color="white" variant='h6'><b>{item.title}</b></Typography>
-                                <Typography color="white" variant='body2'>{item.description}</Typography>
+                                <Typography color="white" variant='h6' style={{ marginTop: 12 }}><b>{item.title}</b></Typography>
+                                <Typography color="white" variant='body2' style={{ marginTop: 5 }}>{item.description}</Typography>
                             </ContainerText>
                         </Grid>
                     ))
@@ -73,7 +73,7 @@ const ServicesInfo = () => {
 
 const Container = styled.div`
     width: 100%;
-    height: 399px;
+    padding-bottom: 120px;
     background: #434350;
     margin-top: 30px;
     position: relative;
@@ -90,6 +90,10 @@ const ServicesImage = styled.img`
 const ContainerText = styled.div`
     text-align: center;
     max-width: 246px;
+    height: 80px;
+    @media (max-width: 1300px) {
+    height: 140px;
+  }
 `
 
 const ContainerItem = styled.div`

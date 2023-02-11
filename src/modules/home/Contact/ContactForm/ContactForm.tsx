@@ -1,8 +1,69 @@
+import sendEmail from '@/api/sendEmail'
 import { css } from '@emotion/css'
 import { Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
 import React from 'react'
+import { html_part } from './html_part'
 
 const ContactForm = () => {
+    const [name, setName] = React.useState('')
+    const [email, setEmail] = React.useState('')
+    const [phone, setPhone] = React.useState('')
+    const [service, setService] = React.useState('')
+    const [payment, setPayment] = React.useState('')
+    const [contact, setContact] = React.useState('')
+    const [message, setMessage] = React.useState('')
+
+    const handleSubmit = () => {
+        if (!name)
+            return alert('Ingrese su correo')
+        if (!email)
+            return alert('Ingrese su correo')
+        if (!phone)
+            return alert('Ingrese su teléfono')
+        if (!service)
+            return alert('Ingrese su motivo')
+        if (!payment)
+            return alert('Ingrese su presupuesto')
+        if (!contact)
+            return alert('Ingrese su medio de contacto')
+        if (!message)
+            return alert('Ingrese su mensaje')
+        handleSender()
+    }
+
+    const handleSender = async () => {
+        const req = await sendEmail({
+            "from": {
+                "email": "contacto@teknomaster.cl",
+                "name": "Tekno Master"
+            },
+            "to": [
+                {
+                    "email": email,
+                    "name": name
+                }
+            ],
+            "subject": "Ejemplo",
+            html_part: html_part({ name, email, phone, service, payment, contact, message }),
+            "headers": {
+                "X-CustomHeader": "Header value",
+                "Access-Control-Allow-Origin": "*", // Required for CORS support to work
+                "Access-Control-Allow-Credentials": true, // Required for cookies, authorization headers with HTTPS
+                "Content-Type": "application/json"
+            },
+            "smtp_tags": [
+                "string"
+            ],
+            "attachments": []
+        })
+        if (!req) {
+            return alert('Error al enviar formulario')
+        }
+        alert('Formulario enviado')
+    }
+
+
+    // Connect useState to the input value
     return (
         <div className={css`max-width: 700px;`}>
             <Grid container spacing={3}>
@@ -15,23 +76,41 @@ const ContactForm = () => {
                     </b></Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    <TextField label="Nombre" variant="filled" fullWidth />
+                    <TextField
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        label="Nombre"
+                        variant="filled"
+                        fullWidth
+                    />
                 </Grid>
                 <Grid item xs={6}>
-                    <TextField label="Correo" variant="filled" fullWidth />
+                    <TextField
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        label="Correo"
+                        variant="filled"
+                        fullWidth
+                    />
                 </Grid>
                 <Grid item xs={6}>
-                    <TextField label="Teléfono" variant="filled" fullWidth />
+                    <TextField
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        label="Teléfono"
+                        variant="filled"
+                        fullWidth
+                    />
                 </Grid>
                 <Grid item xs={12}>
                     <FormControl fullWidth>
-                        <InputLabel id="age">Motivo</InputLabel>
+                        <InputLabel id="service">Motivo</InputLabel>
                         <Select
-                            labelId="age"
+                            value={service}
+                            onChange={(e) => setService(e.target.value)}
+                            labelId="service"
                             id="demo-simple-select"
-                            value={''}
-                            label="Age"
-                            onChange={() => {}}
+                            label="service"
                             variant="filled"
                         >
                             <MenuItem value={10}>Página Web</MenuItem>
@@ -43,13 +122,13 @@ const ContactForm = () => {
                 </Grid>
                 <Grid item xs={12}>
                     <FormControl fullWidth>
-                        <InputLabel id="age">Presupuesto del proyecto</InputLabel>
+                        <InputLabel id="payment">Presupuesto del proyecto</InputLabel>
                         <Select
-                            labelId="age"
+                            value={payment}
+                            onChange={(e) => setPayment(e.target.value)}
+                            labelId="payment"
                             id="demo-simple-select"
-                            value={''}
-                            label="Age"
-                            onChange={() => {}}
+                            label="payment"
                             variant="filled"
                         >
                             <MenuItem value={10}>Menos de $500.000 (Desarrollo Express)</MenuItem>
@@ -60,13 +139,13 @@ const ContactForm = () => {
                 </Grid>
                 <Grid item xs={12}>
                     <FormControl fullWidth>
-                        <InputLabel id="age">¿Como quieres que te contactemos?</InputLabel>
+                        <InputLabel id="contact">¿Como quieres que te contactemos?</InputLabel>
                         <Select
-                            labelId="age"
+                            value={contact}
+                            onChange={(e) => setContact(e.target.value)}
+                            labelId="contact"
                             id="demo-simple-select"
-                            value={''}
-                            label="Age"
-                            onChange={() => {}}
+                            label="contact"
                             variant="filled"
                         >
                             <MenuItem value={10}>Mensaje por WhatsApp</MenuItem>
@@ -75,7 +154,9 @@ const ContactForm = () => {
                     </FormControl>
                 </Grid>
                 <Grid item xs={12}>
-                    <TextField 
+                    <TextField
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                         label="Detalles de tu proyecto"
                         multiline
                         variant="filled"
@@ -84,7 +165,7 @@ const ContactForm = () => {
                     />
                 </Grid>
                 <Grid item xs={12}>
-                    <Button variant="contained" fullWidth className={css`
+                    <Button onClick={handleSubmit} variant="contained" fullWidth className={css`
                        background: #F37368 !important; 
                     `}>ENVIAR</Button>
                 </Grid>

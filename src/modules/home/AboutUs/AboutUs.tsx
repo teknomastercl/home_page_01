@@ -7,10 +7,10 @@ const AboutUs = () => {
     return (
         <Container>
             <Grid container>
-                <Grid item xs={6} container justifyContent="center">
+                <Grid item xs={12} lg={6} container justifyContent="center">
                     <ImageAbout src={require('@/assets/img/aboutUs.png')} />
                 </Grid>
-                <Grid item xs={6} container justifyContent="center">
+                <Grid item xs={12} lg={6} container justifyContent="center">
                     <ContainerDesc>
                         <Typography variant="h4"><b>¿Que hacemos en <CRed>Tekno Master?</CRed></b></Typography>
                         <Typography variant="body1" className={css`padding-top:15px;`}>
@@ -39,16 +39,23 @@ const Container = styled.div`
   padding-right: 57px;
   max-width: 1325px;
   margin: auto;
+  @media (max-width: 1300px) {
+    height: inherit;
+  }
 `
 
 const ContainerDesc = styled.div`
     padding-top: 100px;
     padding-left: 57px;
     padding-right: 57px;
+    padding-bottom: 58px;
 `
 const ImageAbout = styled.img`
     padding-top: 41px;
     width: 632px;
+    @media (max-width: 1300px) {
+        width: 100%;
+  }
 `
 const CRed = styled.span`
     color: #F37368;

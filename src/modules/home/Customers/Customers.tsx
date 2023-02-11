@@ -11,20 +11,20 @@ const Customers = () => {
                         <Typography variant="h5"><b>Clientes</b></Typography>
                     </Title>
                 </Grid>
-                <Grid item xs={12} container justifyContent="center" alignItems="center">
-                    <Grid item xs container justifyContent="center" alignItems="center">
+                <Grid item xs={12} spacing={4} container justifyContent="center" alignItems="center">
+                    <Grid item xs={6} lg container justifyContent="center" alignItems="center">
                         <ImageCustomer src={require('@/assets/img/walmart.png')} />
                     </Grid>
-                    <Grid item xs container justifyContent="center" alignItems="center">
+                    <Grid item xs={6} lg container justifyContent="center" alignItems="center">
                         <ImageCustomer src={require('@/assets/img/sketchers.png')} />
                     </Grid>
-                    <Grid item xs container justifyContent="center" alignItems="center">
+                    <Grid item xs={6} lg container justifyContent="center" alignItems="center">
                         <ImageCustomer src={require('@/assets/img/theline.png')} />
                     </Grid>
-                    <Grid item xs container justifyContent="center" alignItems="center">
+                    <Grid item xs={6} lg container justifyContent="center" alignItems="center">
                         <ImageCustomer src={require('@/assets/img/hit.png')} />
                     </Grid>
-                    <Grid item xs container justifyContent="center" alignItems="center">
+                    <Grid item xs={6} lg container justifyContent="center" alignItems="center">
                         <ImageCustomer src={require('@/assets/img/viella.png')} />
                     </Grid>
                 </Grid>

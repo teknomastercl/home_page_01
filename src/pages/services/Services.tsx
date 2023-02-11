@@ -21,6 +21,7 @@ const Services = () => {
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
+              {/* <PageIndicator state={state} fullpageApi={fullpageApi} /> */}
               <Section className="section">
                 <RootPage fullpageApi={fullpageApi} />
               </Section>
@@ -43,6 +44,26 @@ const Services = () => {
     </Container>
   )
 }
+
+// const PageIndicator = ({state, fullpageApi}) => {
+//   const active =  fullpageApi.getActiveSection()
+//   console.log('active',active)
+//   const sectionCount = state.sectionCount
+//   const renderButtons = () => {
+//     for (let i = 0; i < sectionCount; i++) {
+//       return (
+//         <div>
+//           <Typography>lkasmdlasmdl</Typography>
+//         </div>
+//       )
+//     }
+//   }
+//   return(
+//     <div>
+//       {renderButtons()}
+//     </div>
+//   )
+// }
 
 const Section = styled.div``
 

@@ -10,12 +10,14 @@ const WebPage = () => {
                 <Grid item xs={6} container justifyContent="center" alignItems="center">
                     <div>
                         <Typography variant="h4" color="white">
-                            Primero diseñamos propuestas, desarrollamos la página web y se lanza al público
+                            Diseñamos, desarrollamos y lanzamos tu sitio web al público.
                         </Typography>
                         <Typography variant="h5" color="white" className={css`padding-top:20px; padding-bottom: 30px;`}>
-                            Desde diseñar un mockup hasta desarrollar tu página y subirla a la web para ser vista por tus clientes
+                            Asegurando una experiencia de usuario óptima y una imagen profesional para tu marca.
                         </Typography>
-                        <Button variant="contained" className={buttonContact}>Necesito un sitio web</Button>
+                        <a href='/contact'>
+                            <Button variant="contained" className={buttonContact}>Necesito un sitio web</Button>
+                        </a>
                     </div>
                 </Grid>
                 <Grid item xs={6} container justifyContent="center" alignItems="center">

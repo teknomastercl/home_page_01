@@ -7,13 +7,13 @@ import ContainerInfo from './ContainerInfo/ContainerInfo'
 const Contact = () => {
   return (
     <Container>
-      <Grid container>
-        <Grid item xs={4}>
+      <Grid container justifyContent='center'>
+        <Grid item xs={12}  container justifyContent='center'>
             <ContainerInfo />
         </Grid>
-        <Grid item xs={8} container justifyContent="center">
+        {/* <Grid item xs={8} container justifyContent="center">
            <ContactForm />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Container>
   )

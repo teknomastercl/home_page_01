@@ -4,42 +4,38 @@ import { Button, Grid, Typography } from '@mui/material'
 import React from 'react'
 import ContactDesc from '../Contact/ContactDesc'
 import Services from './Services/Services'
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 import Line from '../Header/Line'
+import RedesSociales from './RedesSociales'
 
 const Footer = () => {
+    const today = new Date().getFullYear()
     return (
         <Backgroud>
             <Line />
             <Container>
                 <Grid container spacing={5}>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} lg={3}>
                         <img src={require('@/assets/img/logo_full.png')} />
                     </Grid>
-                    <Grid item xs={3} container>
+                    <Grid item xs={12} lg={3} container>
                         <Services />
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} lg={3}>
                         <Typography variant="body1" color="white"><b>¡Contáctanos!</b></Typography>
                         <div>
-                            <ContactDesc />
+                            <ContactDesc rrssOff />
                         </div>
                     </Grid>
-                    <Grid item xs={3} container justifyContent="center">
+                    {/* <Grid item xs={3} container justifyContent="center">
                         <Button variant="contained" className={btnPay}>Paga aquí tu proyecto</Button>
                         <WebpayLogo src={require('@/assets/img/webpay.png')} />
-                    </Grid>
+                    </Grid> */}
                     <Grid item xs={6}>
-                        <Typography variant='caption' color="white">Copyright © 2022. Tekno Master | Gestión Informática</Typography>
+                        <Typography variant='caption' color="white">Copyright © {today}. Tekno Master | Gestión Informática</Typography>
                     </Grid>
                     <Grid item xs={6} container justifyContent="flex-end">
-                        <FacebookIcon className={iconStyle} />
-                        <TwitterIcon className={iconStyle} />
-                        <InstagramIcon className={iconStyle} />
-                        <LinkedInIcon className={iconStyle} />
+                        <RedesSociales />
                     </Grid>
                 </Grid>
             </Container>
@@ -68,9 +64,6 @@ const btnPay = css`
     color: black !important;
     border-radius: 100px !important;
 `
-const iconStyle = css`
-    color:white;
-    padding-left:10px;
-`
+
 
 export default Footer
