@@ -1,8 +1,23 @@
 [
     {
         "title": "Viella.cl",
-        "src": "viella.jpg",
+        "src": "viella.png",
         "href": "https://viella.cl/"
+    },
+    {
+        "title": "Warriorstore.cl",
+        "src": "warriorstore.png",
+        "href": "https://warriorstore.cl/"
+    },
+    {
+        "title": "Traente.cl",
+        "src": "traente.jpg",
+        "href": "https://traente.cl/"
+    },
+    {
+        "title": "Pekastienda.cl",
+        "src": "pekastienda.jpg",
+        "href": "https://pekastienda.cl/"
     },
     {
         "title": "Tarjetaregalolider.cl",
@@ -13,20 +28,5 @@
         "title": "Algramo",
         "src": "algramo.png",
         "href": "https://play.google.com/store/apps/details?id=com.algramoapp&hl=es_419"
-    },
-    {
-        "title": "LapizPapel.cl",
-        "src": "lapizpapel.jpg",
-        "href": "https://www.lapizpapel.cl/"
-    },
-    {
-        "title": "Teknobyte.cl",
-        "src": "tecnobuy.jpg",
-        "href": "https://www.tecnobuy.cl/"
-    },
-    {
-        "title": "ArrowGroup.cl",
-        "src": "arrowgroup.jpg",
-        "href": "https://www.arrowgroup.cl/"
     }
 ]
